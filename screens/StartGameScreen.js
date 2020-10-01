@@ -48,7 +48,7 @@ const StartGameScreen = (props) => {
   if (confirmed) {
     confirmedOutput = (
       <Card style={styles.summaryContainer}>
-        <Text> You selected </Text>
+        <Text>You selected</Text>
         <NumberContainer>{selectedNumber}</NumberContainer>
         <Button
           title='Start game'
@@ -69,7 +69,7 @@ const StartGameScreen = (props) => {
             blurOnSubmit
             autoCapitalize='none'
             autoCorrect={false}
-            keyboardType='numeric'
+            keyboardType='number-pad'
             maxLength={2}
             onChangeText={numberInputHandler}
             value={enteredValue}
