@@ -3,8 +3,8 @@ import {
   View,
   Text,
   Alert,
-  ScrollView,
   FlatList,
+  Dimensions,
   StyleSheet
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -87,11 +87,6 @@ const GameScreen = (props) => {
         </MainButton>
       </Card>
       <View style={styles.listContainer}>
-        {/* <ScrollView contentContainerStyle={styles.list}>
-          {pastGuesses.map((guess, index) =>
-            renderListItem(guess, pastGuesses.length - index)
-          )}
-        </ScrollView> */}
         <FlatList
           keyExtractor={(item) => item}
           data={pastGuesses}
@@ -112,13 +107,13 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: 20,
-    width: 300,
-    maxWidth: '80%'
+    marginTop: Dimensions.get('window').height > 600 ? 20 : 10,
+    width: 400,
+    maxWidth: '90%'
   },
   listContainer: {
     flex: 1,
-    width: '60%'
+    width: Dimensions.get('window').width > 350 ? '60%' : '80%'
   },
   list: {
     flexGrow: 1,
