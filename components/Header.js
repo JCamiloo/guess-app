@@ -7,7 +7,7 @@ const Header = (props) => {
   return (
     <View
       style={{
-        ...styles.header,
+        ...styles.headerBase,
         ...Platform.select({
           ios: styles.headerIOS,
           android: styles.headerAndroid
@@ -33,9 +33,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   headerAndroid: {
-    backgroundColor: Colors.primary,
-    borderBottomColor: 'transparent',
-    borderBottomWidth: 0
+    backgroundColor: Colors.primary
   },
   headerTitle: {
     color: Platform.OS === 'ios' ? Colors.primary : 'white'
